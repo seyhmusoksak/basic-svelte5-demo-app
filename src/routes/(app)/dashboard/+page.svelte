@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Card from './MyCard.svelte';
+	import Banner from './Banner.svelte';
 
 	type Task = {
 		id: number;
 		title: string;
 		total: number;
 		done: number;
-	}
+	};
 
-	let tasks: Task[] = [];
+	let tasks: Task[];
 
 	const url = 'http://localhost:8080/products';
 
@@ -24,7 +25,9 @@
 
 <div class="p-5 sm:ml-64">
 	<div class="p-4 mt-14">
-		<div class="grid grid-cols-4 gap-3 mb-4">
+		<Banner />
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
 			{#each tasks as item}
 				<Card data={item} />
 			{/each}

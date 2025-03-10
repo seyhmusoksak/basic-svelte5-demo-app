@@ -1,13 +1,6 @@
 <script lang="ts">
 
-	interface data {
-		id: number;
-		title: string;
-		total: number;
-		done: number;
-	};
-
-	export let data: data;
+	export let data;
 
 	$: percentage = data.total > 0 ? Math.round((data.done / data.total) * 100) : 0;
 </script>
